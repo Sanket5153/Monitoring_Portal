@@ -121,10 +121,11 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+Sanket/*
+
 # Environments
 
 *.csv
-.Sanket/test.txt
 .env
 .venv
 env/
