@@ -122,10 +122,9 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-<<<<<<< HEAD
+
 *.csv
-=======
->>>>>>> 1f4fe242310bc8990aa9b52b8df99d1056a116e7
+.Sanket/test.txt
 .env
 .venv
 env/
