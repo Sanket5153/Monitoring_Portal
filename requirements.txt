@@ -1,10 +1,8 @@
 pandas
 numpy
 seaborn
-<<<<<<< HEAD
 scikit-learn
 catboost
 xgboost
-=======
->>>>>>> 1f4fe242310bc8990aa9b52b8df99d1056a116e7
+dill
 -e .
