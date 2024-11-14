@@ -42,7 +42,7 @@ class DataTransformation:
                 'cpus_req',
                 'derived_ec',
                 'exit_code',
-
+                'nodelist',
                 'array_max_tasks',
                 'array_task_pending',
                 'flags',
