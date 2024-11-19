@@ -26,11 +26,13 @@ class DataIngestion:
     def __init__(self):
         self.ingestion_config=DataIngestionConfig()
 
+
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
             df=pd.read_csv('notebook\data\scheduler_data.csv')
             #df=pd.read_csv('notebook\data\scheduler_data_test.csv')
+
 
             categorical_features=[feature for feature in df.columns if df[feature].dtype=='O']
 
@@ -39,7 +41,7 @@ class DataIngestion:
                 temp_df=temp[temp>0.01].index
                 df[feature]=np.where(df[feature].isin(temp_df),df[feature],'Rare_var')
 
-            for feature in categorical_features:
+            for feature in categorical_features:    
                 labels_ordered=df.groupby([feature])['time_end'].mean().sort_values().index
                 labels_ordered={k:i for i,k in enumerate(labels_ordered,0)}
                 df[feature]=df[feature].map(labels_ordered)

@@ -34,41 +34,37 @@ class DataTransformation:
         '''
         try:
             numerical_columns=[
-                 'id_array_job',
-                'id_array_task',
-                'id_user',
-                'kill_requid',
-                'nodes_alloc',
-                'cpus_req',
-                'derived_ec',
-                'exit_code',
-                'nodelist',
-                'array_max_tasks',
-                'array_task_pending',
-                'flags',
-                'mem_req',
-                'priority',
-                'state',
-                'timelimit',
-                'time_submit',
-                'time_eligible',
-                'time_start',
-                #'time_end',
-                'time_suspended',
-                'track_steps',
-                'id_job'
-            ]
+                    'id_array_job',
+                    'id_array_task',
+                    'id_user',
+                    'kill_requid',
+                    'nodes_alloc',
+                    'cpus_req',
+                    'derived_ec',
+                    'exit_code',
+                    'array_max_tasks',
+                    'array_task_pending',
+                    'flags',
+                    'mem_req',
+                    'priority',
+                    'state',
+                    'timelimit',
+                    'time_submit',
+                    'time_eligible',
+                    'time_start',
+                    #'time_end',
+                    'time_suspended',
+                    'track_steps',
+                    'id_job']
 
             categorical_columns= [
-                
-                'gres_req',
-                'gres_alloc',
-                'constraints',
-                'partition',
-                'tres_alloc',
-                'tres_req',
-                'job_type'
-            ]
+                        'nodelist',
+                        'gres_req',
+                        'gres_alloc',
+                        'constraints',
+                        'partition',
+                        'tres_req',
+                        'job_type']
 
     #---------------------------
         # This is for testing with other dataset 
@@ -152,7 +148,6 @@ class DataTransformation:
                     'cpus_req',
                     'derived_ec',
                     'exit_code',
-                    'gres_used',
                     'array_max_tasks',
                     'array_task_pending',
                     'flags',
@@ -167,7 +162,7 @@ class DataTransformation:
                     'time_suspended',
                     'track_steps',
                     'id_job'
-                ]
+                    ]
             
             #-----------------------
             #This is for testing other dataset
@@ -199,8 +194,17 @@ class DataTransformation:
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
 
+            print("Shape of input_feature_train_df before transformation:", input_feature_train_df.shape)
+            print("Shape of target_feature_train_df before transformation:", target_feature_train_df.shape)
+
+
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
+
+            #input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
+            
+            print("Shape of input_feature_train_arr after transformation:", input_feature_train_arr.shape)
+
 
             train_arr = np.c_[
                 input_feature_train_arr, np.array(target_feature_train_df)

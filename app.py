@@ -61,11 +61,15 @@ def predict_datapoint():
 
         # Load the trained model (assuming you have loaded it earlier in your code)
         predict_pipeline= PredictPipeline()
-        results = predict_pipeline.predict(predict_df) ## Calling predict function adn giving dataframe
 
+        results = predict_pipeline.predict(predict_df) ## Calling predict function adn giving dataframe
+        
         # Return prediction result
         #return render_template('result.html', prediction=prediction)
-        return render_template('result.html', results=results[0])
+       
+        #return render_template('home.html', results=results[0]:,.2f)
+        return render_template('home.html', results="{:,.2f}".format(results[0]))
+        
     
 if __name__=="__main__":
     app.run(host="0.0.0.0",debug=True)
