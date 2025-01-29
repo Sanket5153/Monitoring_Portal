@@ -7,122 +7,54 @@
         <h2>Enter Job Details</h2>
 
         <div class="mb-3">
-            <label class="form-label">Job Array ID</label>
-            <input class="form-control" type="number" name="id_array_job" placeholder="Enter Job Array ID" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Task Array ID</label>
-            <input class="form-control" type="number" name="id_array_task" placeholder="Enter Task Array ID" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">User ID</label>
-            <input class="form-control" type="number" name="id_user" placeholder="Enter User ID" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Kill Request ID</label>
-            <input class="form-control" type="number" name="kill_requid" placeholder="Enter Kill Request ID" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Nodes Allocated</label>
-            <input class="form-control" type="number" name="nodes_alloc" placeholder="Enter Nodes Allocated" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Node List</label>
-            <input class="form-control" type="text" name="nodelist" placeholder="Enter Node List" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">CPUs Requested</label>
-            <input class="form-control" type="number" name="cpus_req" placeholder="Enter CPUs Requested" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Derived EC</label>
-            <input class="form-control" type="number" name="derived_ec" placeholder="Enter Derived EC" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Exit Code</label>
-            <input class="form-control" type="text" name="exit_code" placeholder="Enter Exit Code" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">GRES Requested</label>
-            <input class="form-control" type="text" name="gres_req" placeholder="Enter GRES Requested" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">GRES Allocated</label>
-            <input class="form-control" type="text" name="gres_alloc" placeholder="Enter GRES Allocated" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Array Max Tasks</label>
-            <input class="form-control" type="number" name="array_max_tasks" placeholder="Enter Array Max Tasks" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Array Task Pending</label>
-            <input class="form-control" type="number" name="array_task_pending" placeholder="Enter Array Task Pending" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Constraints</label>
-            <input class="form-control" type="text" name="constraints" placeholder="Enter Constraints" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Flags</label>
-            <input class="form-control" type="text" name="flags" placeholder="Enter Flags" required />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Memory Requested</label>
-            <input class="form-control" type="number" name="mem_req" placeholder="Enter Memory Requested" required />
+            <label class="form-label">Account</label>
+            <input class="form-control" type="number" name="account" placeholder="Enter Account" required />
         </div>
         <div class="mb-3">
             <label class="form-label">Partition</label>
-            <input class="form-control" type="text" name="partition" placeholder="Enter Partition" required />
+            <input class="form-control" type="number" name="partition" placeholder="Enter Partition" required />
         </div>
         <div class="mb-3">
             <label class="form-label">Priority</label>
             <input class="form-control" type="number" name="priority" placeholder="Enter Priority" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">State</label>
-            <input class="form-control" type="text" name="state" placeholder="Enter State" required />
-        </div>
-        <div class="mb-3">
             <label class="form-label">Time Limit</label>
             <input class="form-control" type="number" name="timelimit" placeholder="Enter Time Limit" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">Time Submitted</label>
-            <input class="form-control" type="number" name="time_submit" placeholder="Enter Time Submitted" required />
+            <label class="form-label">CPU Allocated TRES</label>
+            <input class="form-control" type="number" name="CPU_ALLOC_TRES" placeholder="Enter CPU Allocated TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">Time Eligible</label>
-            <input class="form-control" type="number" name="time_eligible" placeholder="Enter Time Eligible" required />
+            <label class="form-label">Node Allocated TRES</label>
+            <input class="form-control" type="number" name="NODE_ALLOC_TRES" placeholder="Enter Node Allocated TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">Time Start</label>
-            <input class="form-control" type="number" name="time_start" placeholder="Enter Time Start" required />
+            <label class="form-label">Billing Allocated TRES</label>
+            <input class="form-control" type="number" name="BILLING_ALLOC_TRES" placeholder="Enter Billing Allocated TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">Time Suspended</label>
-            <input class="form-control" type="number" name="time_suspended" placeholder="Enter Time Suspended" required />
+            <label class="form-label">CPU Requested TRES</label>
+            <input class="form-control" type="number" name="CPU_REQ_TRES" placeholder="Enter CPU Requested TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">Track Steps</label>
-            <input class="form-control" type="number" name="track_steps" placeholder="Enter Track Steps" required />
+            <label class="form-label">Memory Requested TRES</label>
+            <input class="form-control" type="number" name="MEMORY_REQ_TRES" placeholder="Enter Memory Requested TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">TRES Allocated</label>
-            <input class="form-control" type="text" name="tres_alloc" placeholder="Enter TRES Allocated" required />
+            <label class="form-label">Node Requested TRES</label>
+            <input class="form-control" type="number" name="NODE_REQ_TRES" placeholder="Enter Node Requested TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">TRES Requested</label>
-            <input class="form-control" type="text" name="tres_req" placeholder="Enter TRES Requested" required />
+            <label class="form-label">Billing Requested TRES</label>
+            <input class="form-control" type="number" name="BILLING_REQ_TRES" placeholder="Enter Billing Requested TRES" required />
         </div>
         <div class="mb-3">
-            <label class="form-label">Job Type</label>
-            <input class="form-control" type="text" name="job_type" placeholder="Enter Job Type" required />
+            <label class="form-label">Queue Time</label>
+            <input class="form-control" type="number" name="Queue_time" placeholder="Enter Queue Time" required />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Job ID</label>
-            <input class="form-control" type="number" name="id_job" placeholder="Enter Job ID" required />
-        </div>
-        
+    
         <div class="mb-3">
             <input class="btn btn-primary" type="submit" value="Predict Job End Time" />
         </div>

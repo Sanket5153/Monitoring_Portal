@@ -32,24 +32,39 @@ class DataTransformation:
         '''
             This function is responsible for Data Transformation
         '''
-        
         try:
             numerical_columns=[
-                            'account',
-                            'partition',
-                            'priority',
-                            'timelimit',
-                            'CPU_ALLOC_TRES',
-                            'NODE_ALLOC_TRES',
-                            'BILLING_ALLOC_TRES',
-                            'CPU_REQ_TRES',
-                            'MEMORY_REQ_TRES',
-                            'NODE_REQ_TRES',
-                            'BILLING_REQ_TRES',
-                            #'total_time',
-                            'Queue_time']
+                    'id_array_job',
+                    'id_array_task',
+                    'id_user',
+                    'kill_requid',
+                    'nodes_alloc',
+                    'cpus_req',
+                    'derived_ec',
+                    'exit_code',
+                    'array_max_tasks',
+                    'array_task_pending',
+                    'flags',
+                    'mem_req',
+                    'priority',
+                    'state',
+                    'timelimit',
+                    'time_submit',
+                    'time_eligible',
+                    'time_start',
+                    #'time_end',
+                    'time_suspended',
+                    'track_steps',
+                    'id_job']
 
-            
+            categorical_columns= [
+                        'nodelist',
+                        'gres_req',
+                        'gres_alloc',
+                        'constraints',
+                        'partition',
+                        'tres_req',
+                        'job_type']
 
     #---------------------------
         # This is for testing with other dataset 
@@ -75,22 +90,22 @@ class DataTransformation:
 
             )
 
-            # cat_pipeline=Pipeline(
-            #     steps=[
-            #         ("imputer",SimpleImputer(missing_values = np.nan,strategy="most_frequent")),
-            #         #("imputer",SimpleImputer(missing_values = np.nan,strategy='constant', fill_value='unknown')),
-            #         ("one_hot_encoder",OneHotEncoder(categories='auto', handle_unknown = 'ignore')),
-            #         ("scaler",StandardScaler(with_mean=False))
-            #         # ("scaler",MaxAbsScaler())
+            cat_pipeline=Pipeline(
+                steps=[
+                    ("imputer",SimpleImputer(missing_values = np.nan,strategy="most_frequent")),
+                    #("imputer",SimpleImputer(missing_values = np.nan,strategy='constant', fill_value='unknown')),
+                    ("one_hot_encoder",OneHotEncoder(categories='auto', handle_unknown = 'ignore')),
+                    ("scaler",StandardScaler(with_mean=False))
+                    # ("scaler",MaxAbsScaler())
 
-            #     ]
-            # )
+                ]
+            )
 
             # logging.info("Numerical columns standard scaling completed")
 
             # logging.info("Categorical columns encoding completed")
 
-           # logging.info(f"categorical clumns : {categorical_columns}")
+            logging.info(f"categorical clumns : {categorical_columns}")
             logging.info(f"numerical columns : {numerical_columns}")
 
 
@@ -100,7 +115,7 @@ class DataTransformation:
                 [
                     ##num pipline given for numerical_coumns 1.Name 2.Pipeline 3. Cloums 
                 ("num_pipeline",num_pipeline,numerical_columns),
-                #  ("cat_pipeline",cat_pipeline,categorical_columns)
+                 ("cat_pipeline",cat_pipeline,categorical_columns)
                 ]
             )
 
@@ -123,22 +138,31 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
 
             #target_column_name="time_end.1"
-            target_column_name="total_time"
+            target_column_name="time_end"
             numerical_columns=[
-                            'account',
-                            'partition',
-                            'priority',
-                            'timelimit',
-                            'CPU_ALLOC_TRES',
-                            'NODE_ALLOC_TRES',
-                            'BILLING_ALLOC_TRES',
-                            'CPU_REQ_TRES',
-                            'MEMORY_REQ_TRES',
-                            'NODE_REQ_TRES',
-                            'BILLING_REQ_TRES',
-                            # 'total_time',
-                            'Queue_time']
-                   
+                    'id_array_job',
+                    'id_array_task',
+                    'id_user',
+                    'kill_requid',
+                    'nodes_alloc',
+                    'cpus_req',
+                    'derived_ec',
+                    'exit_code',
+                    'array_max_tasks',
+                    'array_task_pending',
+                    'flags',
+                    'mem_req',
+                    'priority',
+                    'state',
+                    'timelimit',
+                    'time_submit',
+                    'time_eligible',
+                    'time_start',
+                    #'time_end',
+                    'time_suspended',
+                    'track_steps',
+                    'id_job'
+                    ]
             
             #-----------------------
             #This is for testing other dataset
@@ -150,8 +174,8 @@ class DataTransformation:
             #------------------------
 
             #PART REMOVED
-            # input_feature_train_df=train_df
-            # target_feature_train_df=train_df[target_column_name]
+            input_feature_train_df=train_df
+            target_feature_train_df=train_df[target_column_name]
 
             #input_feature_test_df=test_df
             #input_feature_test_df=test_df.drop(columns=[target_column_name],axis=1)

@@ -21,38 +21,22 @@ def predict_datapoint():
     if request.method=='GET':
         return render_template('home.html')
     else:
+                            
         data=CustomData(
-            id_array_job=int(request.form.get('id_array_job')),
-            id_array_task=int(request.form.get('id_array_task')),
-            id_user=int(request.form.get('id_user')),
-            kill_requid=int(request.form.get('kill_requid')),
-            nodes_alloc=int(request.form.get('nodes_alloc')),
-            nodelist=request.form.get('nodelist'),
-            cpus_req=int(request.form.get('cpus_req')),
-            derived_ec=int(request.form.get('derived_ec')),
-            exit_code=request.form.get('exit_code'),
-            gres_req=request.form.get('gres_req'),
-            gres_alloc=request.form.get('gres_alloc'),
-            array_max_tasks=int(request.form.get('array_max_tasks')),
-            array_task_pending=int(request.form.get('array_task_pending')),
-            constraints=request.form.get('constraints'),
-            flags=request.form.get('flags'),
-            mem_req=int(request.form.get('mem_req')),
-            partition=request.form.get('partition'),
-            priority=int(request.form.get('priority')),
-            state=request.form.get('state'),
-            timelimit=int(request.form.get('timelimit')),
-            time_submit=int(request.form.get('time_submit')),
-            time_eligible=int(request.form.get('time_eligible')),
-            time_start=int(request.form.get('time_start')),
+            account = float(request.form.get('account')), 
+            partition = int(request.form.get('partition')), 
+            priority = float(request.form.get('priority')) ,
+            timelimit = float(request.form.get('timelimit')), 
+            CPU_ALLOC_TRES = float(request.form.get('CPU_ALLOC_TRES')),
+            NODE_ALLOC_TRES = float(request.form.get('NODE_ALLOC_TRES')),
+            BILLING_ALLOC_TRES = float(request.form.get('BILLING_ALLOC_TRES')),
+            CPU_REQ_TRES = float(request.form.get('CPU_REQ_TRES')),
+            MEMORY_REQ_TRES = float(request.form.get('MEMORY_REQ_TRES')),
+            NODE_REQ_TRES = float(request.form.get('NODE_REQ_TRES')),
+            BILLING_REQ_TRES = float(request.form.get('BILLING_REQ_TRES')) ,
+            Queue_time = float(request.form.get('Queue_time'))  
+                    
             
-            time_suspended=int(request.form.get('time_suspended')),
-            track_steps=int(request.form.get('track_steps')),
-            tres_alloc=request.form.get('tres_alloc'),
-            tres_req=request.form.get('tres_req'),
-            job_type=request.form.get('job_type'),
-            id_job=int(request.form.get('id_job'))
-
         )
 
         # Convert the data to a DataFrame using Predict_pipeline.py 

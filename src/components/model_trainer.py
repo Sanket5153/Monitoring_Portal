@@ -38,10 +38,10 @@ class ModelTrainer:
                 test_array[:,-1]
             )
             models = {
-                #"Random Forest": RandomForestRegressor(),
+                "Random Forest": RandomForestRegressor(),
                 #"Decision Tree": DecisionTreeRegressor(),
                 #"Gradient Boosting": GradientBoostingRegressor(),
-                "Linear Regression": LinearRegression(),
+                #"Linear Regression": LinearRegression(),
                 #"XGBRegressor": XGBRegressor(),
                 #"CatBoosting Regressor": CatBoostRegressor(verbose=False),
                 #"AdaBoost Regressor": AdaBoostRegressor(),
@@ -54,9 +54,9 @@ class ModelTrainer:
                     # 'max_features':['sqrt','log2'],
                 },
                 "Random Forest":{
-                    # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
                  
-                    # 'max_features':['sqrt','log2',None],
+                    'max_features':['sqrt','log2',None],
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 "Gradient Boosting":{
