@@ -125,7 +125,7 @@ artifacts/*
 
 # Environments
 
-*.csv
+##*.csv
 .env
 .venv
 env/
