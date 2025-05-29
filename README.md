@@ -1,4 +1,4 @@
-# ML Job End Time Prediction using SLURM Logs
+# ML Job End Time Prediction Model
 
 ## Getting Started
 
